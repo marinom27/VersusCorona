@@ -1,9 +1,9 @@
-Buslinie ,,Sitzplätze,Stehplätze,Gesamt,Bustyp
+Buslinie ,Typ,Sitzplätze,Stehplätze,Gesamt,Bustyp
 ,,,,,
-32,,60,95,155,Hess Doppelgelenk Trolleybus
-61,,43,54,97,Mercedes Citaro Gelenkbus
-62,,43,54,97,Mercedes Citaro Gelenkbus
-10,,90,130,220,Be 5/6 Cobra
-6,,90,130,220,
-15,,48,72,120,
-11,,90,130,220,
+32,TR,60,95,155,Hess Doppelgelenk Trolleybus
+61,B,43,54,97,Mercedes Citaro Gelenkbus
+62,B,43,54,97,Mercedes Citaro Gelenkbus
+10,T,90,130,220,Be 5/6 Cobra
+6,T,90,130,220,Cobra
+15,T,48,72,120,Tram 2000 1. Serie
+11,T,90,130,220,Cobra
