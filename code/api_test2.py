@@ -70,13 +70,15 @@ def parse_steps(route):
 
 halteList = [line.rstrip('\n') for line in open("../data/vbz_fahrgastzahlen/stationen.txt")] #data bus and tram stations
 #print(halteList)
-Capacities = [{"line":32,"seats":60,"stands":95,"overall":155},
-{"line":61,"seats":43,"stands":54,"overall":97},
-{"line":62,"seats":43,"stands":54,"overall":97},
-{"line":10,"seats":90,"stands":130,"overall":220},
-{"line":6,"seats":90,"stands":130,"overall":220},
-{"line":15,"seats":48,"stands":72,"overall":120},
-{"line":11,"seats":90,"stands":130,"overall":220}]
+capacities = {32:{"seats":60,"stands":95,"overall":155},
+61:{"seats":43,"stands":54,"overall":97},
+62:{"seats":43,"stands":54,"overall":97},
+10:{"seats":90,"stands":130,"overall":220},
+6:{"seats":90,"stands":130,"overall":220},
+15:{"seats":48,"stands":72,"overall":120},
+11:{"seats":90,"stands":130,"overall":220}}
+
+#line 11 richtung 1 is twards auzelg
 
 hour =11
 minute = 15
@@ -100,25 +102,33 @@ for i in range (0,timebefore,30):
 #pprint(routes)
 
 for r in range(0,len(routes)):
+    ratio=0
+    count=0
     for j in range(len(routes[r][1])):
+
         if(routes[r][1][j].get("type")=="TRANSIT"):
-
-
+            count+=1
             dep = process.extractOne(routes[r][1][j].get("dep"),halteList)[0]
             dep_time=routes[r][1][j].get("dep_time")
             towards = routes[r][1][j].get("towards")
             line = routes[r][1][j].get("line")
             print(dep,dep_time,"Line: ",line, "towards: ",towards)
-
+            richtung =1
             #pred_dep =predict_besetzung(dep_time, line, dep, richtung)
-
-
+            ratio_dep =1# pred_dep[0]/capacities.get(32).get("overall")
+            #print(ratio_dep)
 
             arr = process.extractOne(routes[r][1][j].get("arr"),halteList)[0]
             arr_time=routes[r][1][j].get("arr_time")
             print(arr,arr_time)
 
             #pred_arr = predict_besetzung(arr_time, line, arr, richtung)
+            ratio_arr = 1# pred_dep[0]/capacities.get(32).get("overall")
+            #print(ratio_arr)
+            ratio+=(ratio_dep+ratio_arr)
 
-
+    if(count!=0):
+        ratio/=count*2
+        routes[r][2]=ratio
+        print(ratio)
     print()
