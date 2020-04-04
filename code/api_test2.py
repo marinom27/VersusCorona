@@ -6,6 +6,8 @@ from pprint import pprint
 from datetime import *
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
+import csv
+import numpy as np
 
 
 def dir_deptime(start,dest,dep_time):
@@ -78,6 +80,20 @@ capacities = {32:{"seats":60,"stands":95,"overall":155},
 15:{"seats":48,"stands":72,"overall":120},
 11:{"seats":90,"stands":130,"overall":220}}
 
+with open('../data/vbz_fahrgastzahlen/Haltestellen_Richtungen.csv', newline='') as f:
+    reader = csv.reader(f)
+    endstations = list(reader)
+endstations=endstations[1:][:]
+
+dirs={}                                          #directions mapped to endstations
+for i in range(len(endstations)):
+    dirs[endstations[i][4]]=endstations[i][1]
+
+
+
+
+
+
 #line 11 richtung 1 is twards auzelg
 
 hour =11
@@ -112,17 +128,18 @@ for r in range(0,len(routes)):
             dep_time=routes[r][1][j].get("dep_time")
             towards = routes[r][1][j].get("towards")
             line = routes[r][1][j].get("line")
-            print(dep,dep_time,"Line: ",line, "towards: ",towards)
-            richtung =1
-            #pred_dep =predict_besetzung(dep_time, line, dep, richtung)
-            ratio_dep =1# pred_dep[0]/capacities.get(32).get("overall")
+
+            dir = dirs.get(process.extractOne(towards,halteList)[0])
+            print(dep,dep_time,"Line: ",line, "towards: ",dir)
+            #pred_dep =predict_besetzung(dep_time, line, dep, dir)
+            ratio_dep =capacities.get(32).get("overall")
             #print(ratio_dep)
 
             arr = process.extractOne(routes[r][1][j].get("arr"),halteList)[0]
             arr_time=routes[r][1][j].get("arr_time")
             print(arr,arr_time)
 
-            #pred_arr = predict_besetzung(arr_time, line, arr, richtung)
+            #pred_arr = predict_besetzung(arr_time, line, arr, dir)
             ratio_arr = 1# pred_dep[0]/capacities.get(32).get("overall")
             #print(ratio_arr)
             ratio+=(ratio_dep+ratio_arr)
