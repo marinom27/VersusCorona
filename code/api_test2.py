@@ -43,7 +43,7 @@ def parse_steps(route):
     for dict in route.get("legs")[0].get("steps"):
         if(dict.get("travel_mode")=="TRANSIT"):
 
-            if(dict.get("transit_details").get("line").get("vehicle").get("name")!="Bus" and dict.get("transit_details").get("line").get("vehicle").get("name")!="Tram"):
+            if(dict.get("transit_details").get("line").get("vehicle").get("name")=="Commuter train"):
                 continue
             dist = dict.get("distance").get("value")
             dur = timedelta(seconds=dict.get("duration").get("value"))
@@ -70,6 +70,13 @@ def parse_steps(route):
 
 halteList = [line.rstrip('\n') for line in open("../data/vbz_fahrgastzahlen/stationen.txt")] #data bus and tram stations
 #print(halteList)
+Capacities = [{"line":32,"seats":60,"stands":95,"overall":155},
+{"line":61,"seats":43,"stands":54,"overall":97},
+{"line":62,"seats":43,"stands":54,"overall":97},
+{"line":10,"seats":90,"stands":130,"overall":220},
+{"line":6,"seats":90,"stands":130,"overall":220},
+{"line":15,"seats":48,"stands":72,"overall":120},
+{"line":11,"seats":90,"stands":130,"overall":220}]
 
 hour =11
 minute = 15
@@ -103,7 +110,7 @@ for r in range(0,len(routes)):
             line = routes[r][1][j].get("line")
             print(dep,dep_time,"Line: ",line, "towards: ",towards)
 
-            #pred_dep = predict_besetzung(dep_time, line, dep, richtung)
+            #pred_dep =predict_besetzung(dep_time, line, dep, richtung)
 
 
 
