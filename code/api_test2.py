@@ -72,26 +72,48 @@ def parse_steps(route):
 
 
 
-
-
+halteList = [line.rstrip('\n') for line in open("../data/vbz_fahrgastzahlen/stationen.txt")]
+#print(halteList)
 
 hour =11
 minute = 15
-dt = datetime.now().replace(hour=hour,minute=minute,day=6)
+dt = datetime.now().replace(hour=hour,minute=minute,day=6) #monday
 start = "Zehntenhausplatz,Zürich"
 destination = "ETH Zürich"
 now = datetime.now()
 
 routes = []
 
-for i in range (0,120,8):
+
+
+
+
+
+for i in range (0,120,30):
 
 
     route= dir_arrtime(start,destination,dt-timedelta(minutes=i))
     for j in range(0,len(route)):
-        r=[parse_overral(route[j]),parse_steps(route[j])]
+        r=[parse_overral(route[j]),parse_steps(route[j]),0]
 
         if r not in routes:
             routes.append(r)
 
-pprint(routes)
+for r in range(0,len(routes)):
+    for j in range(len(routes[r][1])):
+        if(routes[r][1][j].get("type")=="TRANSIT"):
+
+
+            dep = process.extractOne(routes[r][1][j].get("dep"),halteList)
+            print(dep)
+            
+            arr = process.extractOne(routes[r][1][j].get("arr"),halteList)
+            print(arr)
+
+
+    print()
+
+
+
+
+#pprint(routes)
