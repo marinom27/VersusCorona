@@ -1,0 +1,748 @@
+nan
+Zürich, Bahnhof Altstetten N
+Zürich, Tüffenwies
+Zürich, Winzerhalde
+Zürich, Hohenklingensteig
+Zürich, Winzerstrasse Süd
+Zürich, Frankental
+Oberengstringen, Eggbühl
+Oberengstringen, Lanzrain
+Oberengstringen, Zentrum
+Oberengstringen, Paradies
+Unterengstringen, Langacher
+Unterengstringen, Sennenbüel N
+Unterengstringen, Sennenbüel
+Unterengstringen, Eckstein
+Unterengstringen, Langwisen
+Schlieren, Talacker-Windegg
+Schlieren, Feldstrasse
+Schlieren, Bahnhof
+Schlieren, Zentrum/Bahnhof
+Schlieren, Brunngasse
+Schlieren, Nassacker
+Schlieren, Heimeliweg
+Schlieren, Spital Limmattal
+Urdorf, Feldegg
+Urdorf, Schlierenstrasse
+Urdorf, Niederurdorf
+Urdorf, Neumatt
+Urdorf, Spitzacker
+Urdorf, Uitikonerstrasse
+Unterengstringen, Aegelsee
+Weiningen ZH, Ausserdorf
+Weiningen ZH, Lindenplatz
+Weiningen ZH, Schulhaus
+Geroldswil, Welbrig
+Geroldswil, Dorfstrasse
+Geroldswil, Zentrum
+Geroldswil, Grindlen
+Fahrweid, Brunaustrasse
+Fahrweid, Au
+Fahrweid, Limmatbrücke
+Dietikon, Heimstrasse
+Zürich, Bezirksgebäude
+Zürich, Stauffacher
+Zürich, Sihlstrasse
+Zürich, Paradeplatz
+Zürich, Kantonalbank
+Zürich, Bürkliplatz
+Zürich, Bellevue
+Zürich, Bahnhof Stadelhofen
+Zürich,Kalkbreite/Bhf.Wiedikon
+Zürich, Lochergut
+Zürich, Zypressenstrasse
+Zürich, Albisriederplatz
+Zürich, Letzigrund
+Zürich, Freihofstrasse
+Zürich, Kappeli
+Zürich, Grimselstrasse
+Zürich, Lindenplatz
+Zürich, Bachmattstrasse
+Zürich, Farbhof
+Zürich, Micafil
+Schlieren, Mülligen
+Schlieren, Gasometerbrücke
+Schlieren, Wagonsfabrik
+Zürich, Hardplatz
+Zürich, Herdernstrasse
+Zürich, SBB-Werkstätte
+Zürich, Letzipark
+Zürich, Letzibach
+Zürich, Kienastenwies
+Zürich, Zweiackerstrasse
+Zürich, Loorenstrasse
+Zürich, Berghaldenstrasse
+Zürich, Carl-Spitteler-Strasse
+Zürich, Waserstrasse
+Zürich, Drusbergstrasse
+Zürich, Schlyfi
+Zürich, Kapfstrasse
+Zürich, Klusplatz
+Zürich, Freiestrasse
+Zürich, Hegibachplatz
+Zürich, Signaustrasse
+Zürich, Kreuzplatz
+Zürich, Sprecherstrasse
+Zürich, Kunsthaus
+Zürich, Neumarkt
+Zürich, Central
+Zürich, Bahnhofplatz/HB
+Zürich, Löwenplatz
+Zürich, Sihlpost / HB
+Zürich, Kanonengasse
+Zürich, Militär-/Langstrasse
+Zürich, Bäckeranlage
+Zürich, Güterbahnhof
+Zürich, Bahnhof Tiefenbrunnen
+Zürich, Wildbachstrasse
+Zürich, Fröhlichstrasse
+Zürich, Höschgasse
+Zürich, Botanischer Garten
+Zürich, Hölderlinsteig
+Zürich, Klosbach
+Zürich, Hofstrasse
+Zürich, Kirche Fluntern
+Zürich, Hinterbergstrasse
+Zürich, Spyriplatz
+Zürich, Vogelsangstrasse
+Zürich, Seilbahn Rigiblick
+Zürich, Scheuchzerstrasse
+Zürich, Schaffhauserplatz
+Zürich, Rotbuchstrasse
+Zürich, Nürenbergstrasse
+Zürich, Bahnhof Wipkingen
+Zürich, Rosengartenstrasse
+Zürich, Escher-Wyss-Platz
+Zürich, Schiffbau
+Zürich, Bahnhof Hardbrücke
+Dietikon, Gjuchstrasse
+Dietikon, Oetwilerstrasse
+Dietikon, Bahnhof
+Dietikon, Sommerau
+Dietikon, Dörfli
+Dietikon, Hofacker
+Dietikon, Birmensdorferstrasse
+Urdorf, Herweg
+Urdorf, Luberzen
+Schlieren, Steinacker
+Schlieren, Reitmen
+Schlieren, Kesslerstrasse
+Spreitenbach, Asp
+Spreitenbach, Raiacker
+Spreitenbach, Brüel
+Spreitenbach, Altersheim
+Spreitenbach, Shopping Center
+Spreitenbach, Ikea
+Spreitenb, Center Spreitenbach
+Spreitenbach, Furttalstrasse
+Spreitenbach, Interio
+Spreitenbach, Breiti
+Killwangen, Bahnhof
+Zürich, Bahnhof Altstetten
+Zürich, Neeserweg
+Zürich, Feusisbergli
+Zürich, Am Suteracher
+Zürich, Loogarten
+Zürich, Dunkelhölzli
+Zürich, Salzweg
+Zürich, Rautihalde
+Zürich, Schulhaus Buchlern
+Zürich, Friedhof Eichbühl
+Zürich, Solidapark
+Glanzenberg, Bahnhof
+Dietikon, Schönenwerd
+Urdorf, Rainweg
+Urdorf, Neumattstrasse
+Urdorf Weihermatt, Bahnhof
+Oetwil a.d.L., Schweizäcker
+Oetwil an der Limmat, Halde
+Zürich, Bethanien
+Zürich, Toblerplatz
+Maur, See
+Maur, Kirche
+Maur, Dorf
+Maur, Platten
+Ebmatingen, Looren
+Ebmatingen, Dorf
+Ebmatingen, Leeacherstrasse
+Binz bei Maur, Bautacher
+Binz bei Maur, Twäracher
+Pfaffhausen, Müseren
+Zürich, Friedhof Witikon
+Zürich, Glockenacker
+Schwerzenbach ZH, Bahnhof
+Schwerzenbach ZH, Dorf
+Fällanden, Industrie
+Fällanden, Gemeindehaus
+Fällanden, Eggler
+Fällanden, Schützenhaus
+Benglen, Langwis
+Benglen, Gerlisbrunnen
+Benglen, Bodenacher
+Pfaffhausen, Pfaffenstein
+Pfaffhausen, Sängglen
+Pfaffhausen, Feldhof
+Zürich, Altes Krematorium
+Zürich, Hubertus
+Zürich, Sackzelg
+Zürich, Schulhaus Altweg
+Zürich, In der Ey
+Zürich, Triemli
+Schlieren, Geissweid
+Zürich, Opernhaus
+Zürich, Kreuzstrasse
+Zürich, Feldeggstrasse
+Weiningen ZH, Aegelsee
+Urdorf, Sonne
+Urdorf, Oberurdorf
+Dietikon, Bahnhofstrasse
+Dietikon, Stadthaus
+Dietikon, Oberdorf
+Dietikon, Hätschen
+Dietikon, Staffelackerstrasse
+Dietikon, Stelzenacker
+Dietikon, Stadthalle Ost
+Dietikon, Kirchplatz
+Zürich, Lehenstrasse
+Zürich, Rebbergsteig
+Zürich, Kempfhofsteig
+Zürich, Schwert
+Zürich, Meierhofplatz
+Zürich, Wieslergasse
+Zürich, Singlistrasse
+Zürich, Segantinistrasse
+Zürich, Giblenstrasse
+Zürich, Heizenholz
+Zürich, Geeringstrasse
+Zürich, Rütihof
+Zürich, Lettenstrasse
+Zürich, Okenstrasse
+Zürich, Stampfenbachplatz
+Zürich, Bahnhofquai/HB
+Zürich, Nordstrasse
+Zürich, Helvetiaplatz
+Zürich, Kernstrasse
+Zürich, Zwinglihaus
+Zürich, Goldbrunnenplatz
+Zürich, Höfliweg
+Zürich, Friesenberg
+Zürich, Friesenbergstrasse
+Zürich, Im Hagacker
+Zürich, Hegianwandweg
+Zürich, Strassenverkehrsamt
+Zürich, Röntgenstrasse
+Zürich, Limmatplatz
+Zürich, Lägernstrasse
+Zürich, Bucheggplatz
+Zürich, Radiostudio
+Zürich, Birchdörfli
+Zürich, Neuaffoltern
+Zürich, Glaubtenstrasse
+Zürich, Einfangstrasse
+Zürich, Zehntenhausplatz
+Zürich, Hungerbergstrasse
+Zürich, Holzerhurd
+Zürich, Universität Irchel
+Zürich, Langmauerstrasse
+Zürich, Letzistrasse
+Zürich, Kinkelstrasse
+Zürich, Winkelriedstrasse
+Zürich, Haldenbach
+Zürich, ETH/Universitätsspital
+Zürich, Platte
+Zürich, Voltastrasse
+Zürich, Kantonsschule
+Zürich, Rentenanstalt
+Zürich, Bahnhof Enge
+Zürich, Bahnhof Enge/Bederstr.
+Zürich, Waffenplatzstrasse
+Zürich, Sihlcity Nord
+Zürich, Saalsporthalle
+Zürich, Laubegg
+Zürich, Museum Rietberg
+Zürich, Brunaustrasse
+Zürich, Billoweg
+Zch, Bhf.Wollishofen/Staubstr.
+Zürich, Post Wollishofen
+Zürich, Morgental
+Zürich, Butzenstrasse
+Zürich, Zürichbergstrasse
+Zürich, Susenbergstrasse
+Zürich, Zoo
+Zürich, Haldenegg
+Zürich, Bahnhofstrasse/HB
+Zürich, Rennweg
+Zürich, Stockerstrasse
+Zürich, Tunnelstrasse
+Zürich, Hottingerplatz
+Zürich, Römerhof
+Zürich, Hölderlinstrasse
+Zürich, Englischviertelstrasse
+Zürich, Bahnhof Selnau
+Zürich, Förrlibuckstrasse
+Zürich, Fischerweg
+Zürich, Bernoulli-Häuser
+Zürich, Hardturm
+Zürich, Wollishofen
+Zürich, Salersteig
+Zürich, Berninaplatz
+Zürich, Hirschwiesenstrasse
+Zürich, Milchbuck
+Zürich, Guggachstrasse
+Zürich, Kronenstrasse
+Zürich, Beckenhof
+Zürich, Sihlquai/HB
+Zürich, Museum für Gestaltung
+Zürich, Quellenstrasse
+Zürich, Dammweg
+Zürich, Laubiweg
+Zürich, Bad Allenmoos
+Zürich, Regensbergbrücke
+Zürich, Bahnhof Oerlikon
+Zürich, Seebacherplatz
+Zürich, Seebach
+Zürich, Ausserdorfstrasse
+Zürich, Birch-/Glatttalstrasse
+Zürich, Leimgrübelstrasse
+Zürich, Käshaldenstrasse
+Zürich, Köschenrüti
+Zürich, Schönauring
+Zürich, Buhnstrasse
+Zürich, Himmeri
+Zürich, Neunbrunnen
+Zürich, Bollingerweg
+Zürich, Max-Bill-Platz
+Zürich, Bahnhof Oerlikon Ost
+Zürich, Sternen Oerlikon
+Zürich, Dorflinde
+Zürich, Friedackerstrasse
+Zürich, Waldgarten
+Zürich, Frohburg
+Zürich, Friedrichstrasse
+Zürich, Schwamendingerplatz
+Zürich, Siemens
+Zürich, Fellenbergstrasse
+Zürich, Albisrieden
+Zürich, Waidhof
+Zürich, Schwandenholz
+Zürich, Unteraffoltern
+Zürich, Fronwald
+Zürich, Bahnhof Affoltern
+Zürich, Oberwiesenstrasse
+Zürich, Messe/Hallenstadion
+Zürich, Hallenbad Oerlikon
+Zürich, Riedgraben
+Zürich, Saatlenstrasse
+Zürich, Dreispitz
+Zürich, Aubrücke
+Zürich, Herzogenmühlestrasse
+Zürich, Tulpenstrasse
+Zürich, Herbstweg
+Zürich, Blumenfeldstrasse
+Zürich, Aspholz
+Zürich, Mühlacker
+Forch
+Neue Forch
+Maiacher
+Zumikon
+Waltikon
+Zollikerberg
+Spital Zollikerberg
+Waldburg
+Zürich, Rehalp
+Zürich, Balgrist
+Scheuren
+Neuhaus bei Hinteregg
+Hinteregg
+Egg
+Langwies ZH
+Emmat
+Esslingen
+Zürich, Seidelhof
+Zürich, Würzgraben
+Zürich, Aargauerstrasse
+Zürich, Sportweg
+Zürich, Toni-Areal
+Zürich, Technopark
+Zürich, Rudolf-Brun-Brücke
+Zürich, Rathaus
+Zürich, Helmhaus
+Zürich, Bahnhof Wiedikon
+Zürich, Schmiede Wiedikon
+Zürich, Talwiesenstrasse
+Zürich, Heuried
+Zürich, Werd
+Zürich, Tierspital
+Zürich, Schörlistrasse
+Zürich, Heerenwiesen
+Zürich, Luegisland
+Zürich, Luchswiesen
+Zürich, Altried
+Zürich, Hirzenbach
+Zürich, Bahnhof Stettbach
+Zürich, Mattenhof
+Zürich, Probstei
+Zürich, Glattwiesen
+Zürich, Roswiesen
+Zürich, Röslistrasse
+Zürich, Ottikerstrasse
+Zürich, Sonneggstrasse
+Zürich, Bahnhof Oerlikon Nord
+Zürich, Birchstrasse
+Zürich, Chaletweg
+Zürich, Mötteliweg
+Zürich, Glaubtenstrasse Nord
+Zürich, Schumacherweg
+Zürich, Lerchenhalde
+Zürich, Leutschenbach
+Zürich, Oerlikerhus
+Glattpark
+Zürich, Fernsehstudio
+Zürich, Auzelg
+Zürich, Hedwigsteig
+Zürich, Wetlistrasse
+Zürich, Burgwies
+Zürich, Friedhof Enzenbühl
+Zürich, ETH Hönggerberg
+Zürich, Hönggerberg
+Zürich, Zwielplatz
+Zürich, Wartau
+Zürich, Winzerstrasse
+Zürich, Bristenstrasse
+Zürich, Rautistrasse
+Zürich, Untermoosstrasse
+Zürich, Albisriederdörfli
+Zürich, Goldackerweg
+Zürich, Triemlispital
+Zürich, Glaubtenstrasse Süd
+Zürich, Friedhof Sihlfeld
+Zürich, Bertastrasse
+Zürich, Manesseplatz
+Zürich, Hügelstrasse
+Zürich, Brunau/Mutschellenstr.
+Zürich, Thujastrasse
+Zürich, Jugendherberge
+Zürich, Besenrainstrasse
+Zürich, Waffenplatz-/Bederstr.
+Zürich, Uetlihof
+Zürich, Albisgütli
+Zürich, Hardhof
+Zürich, Grünaustrasse
+Zürich, Bändliweg
+Zürich, Werdhölzli
+Zürich, Schaufelbergerstrasse
+Zürich, Felsenrainstrasse
+Zürich, Weihersteig
+Zürich, Waidspital
+Zürich, Pflegezentr. Käferberg
+Zürich, Waidbadstrasse
+Zürich, Im Wingert
+Zürich, Wipkingerplatz
+Zürich, Waidfussweg
+Zürich, Eschergutweg
+Zürich, Alte Trotte
+Schlieren, Zentrum
+Zürich, Brandschenkestrasse
+Zürich, Hürlimannplatz
+Zürich, Kalchbühlweg
+Zürich, Widmerstrasse
+Zürich, Neubühl
+Zürich, Baslerstrasse
+Zürich, Letzipark West
+Zürich, Flurstrasse
+Zürich, Albisrank
+Zürich, Im Gut
+Zürich, Schweighof
+Zürich, Sihlcity
+Zürich, Riedhofstrasse
+Zürich, Elektrowatt
+Zürich, Chinagarten
+Zollikon, Bahnübergang
+Zollikon, Felbenstrasse
+Zollikon, Dufourplatz
+Zollikon, Beugi
+Zollikon, Goldhaldenplatz
+Küsnacht ZH, Bühlstrasse
+Küsnacht ZH, Goldbacherstrasse
+Küsnacht ZH, Boglerenstrasse
+Küsnacht ZH, Schiedhaldenstr.
+Küsnacht ZH, Schiedhaldensteig
+Küsnacht ZH, Schübel
+Itschnach, Tägermoos
+Itschnach, Rebweg
+Itschnach, Dorf
+Itschnach, Fallacher
+Glattbrugg, Lindberghplatz
+Glattbrugg, Bahnhof
+Rümlang, Bäuler
+Glattbrugg, Unterriet
+Kloten Balsberg, Bahnhof
+Zürich Flughafen, Bahnhof
+Zürich Flughafen, Fracht
+Wallisellen, Herti
+Wallisellen, Belair
+Wallisellen, Bahnhof
+Wallisellen, Glatt (Tram)
+Wallisellen, Neugut
+Dübendorf, Giessen
+Dübendorf, Ringwiesen
+Dietikon, Vorstadt
+Zollikon, Gemeindehaus
+Zollikon, Höhestrasse
+Zollikon, Allmend
+Zollikon, Schützenstrasse
+Zollikon, Rebwiesstrasse
+Waldburg, Station
+Zollikerb., Langägerten/Spital
+Zürich, Titlisstrasse
+Zürich, Waldhaus Dolder
+Zürich, Bergstation Dolderbahn
+Binz bei Maur, Fridlimatt
+Binz bei Maur, Post
+Zürich, Bahnhof Wollishofen
+Zürich, Dangelstrasse
+Zürich, Sunnau
+Adliswil, Grüt
+Adliswil, Tiefacker
+Adliswil, Krone
+Adliswil, Bahnhof
+Adliswil, Badstrasse
+Adliswil, Hofackerstrasse
+Adliswil, Ahornweg
+Kilchberg ZH, Spital
+Adliswil, Eichenweg
+Adliswil, Moos
+Adliswil, Grundstrasse
+Zürich, Langgrütstrasse
+Zürich, Gutstrasse
+Zürich, Binz
+Zürich, Räffelstrasse
+Zürich, Grubenstrasse
+Zürich, Binz Center
+Birmensdorf ZH, Bahnhof
+Birmensdorf ZH, Ristet
+Urdorf, Heinrich-Stutz-Strasse
+Dietikon, Schäflibach
+Fällanden, Wigarten
+Fällanden, Zil
+Fällanden, Bruggacher
+Dübendorf, Kirche Wil
+Dübendorf, Högler
+Dübendorf, Wasserfurren
+Dübendorf, Breitibach
+Dübendorf, Sonnental
+Dübendorf, Hoffnung
+Dübendorf, Alterszentrum
+Aesch bei Maur, Im Brünneli
+Aesch bei Maur, Zollingerheim
+Scheuren, Station
+Dübendorf, Kämmaten
+Gockhausen, Ursprungstrasse
+Gockhausen, Dorf
+Zürich, Tobelhof
+Zürich, Zoo/Forrenweid
+Zürich, Bircher-Benner
+Fällanden, Neuhus
+Fällanden, Jugendherberge
+Maur, Aschbach
+Dietikon, Rapidplatz
+Dietikon, Pestalozzi
+Dietikon, Lerzen
+Dietikon, Hagackerstrasse
+Dietikon, Moosmatt
+Dietikon, Silbern
+Zürich, Mittelleimbach
+Zürich, Sihlweidstrasse
+Zürich, Im Hüsli
+Zürich, Marbachweg
+Zürich, Bahnhof Leimbach
+Zürich, Frymannstrasse
+Zürich, Manegg
+Zürich, Verenastrasse
+Zürich, Nordheimstrasse
+Zürich, Krematorium Nordheim
+Zürich, Maienweg
+Zürich, Althoos
+Zürich, Hürstholz
+Zürich, Staudenbühl
+Zürich, Friedhof Schwandenholz
+Zürich, Hertensteinstrasse
+Zürich, Berufswahlschule
+Zürich, Schürgistrasse
+Wallisellen, Glatt (Bus)
+Zollikerberg, Station
+Zollikon, Seestrasse
+Zollikon, Bahnhof
+Zürich, Im Klösterli
+Zürich, Friesenberghalde
+Zürich, Friedhof Uetliberg
+Zürich, Zielweg
+Zürich, Auzelg Ost
+Zürich, Orionstrasse
+Oetwil an der Limmat, Post
+Oetwil an der Limmat, Oberdorf
+Geroldswil, Schweizäcker
+Zürich, Schweizer Rück
+Zürich, Sukkulentensammlung
+Zürich, Landiwiese
+Zürich, Bhf. Wollishofen/Werft
+Zürich, Rote Fabrik
+Zürich, Seerose
+Zürich, Stadtgrenze
+Kilchberg ZH, Paradiesstrasse
+Kilchberg ZH, Bendlikon
+Kilchberg ZH, Schooren
+Rüschlikon, Schlossstrasse
+Rüschlikon, Bodengasse
+Rüschlikon, Bahnhof
+Rüschlikon, Weidstrasse
+Rüschlikon, Langhaldenstrasse
+Rüschlikon, Belvoir
+Rüschlikon, Säumerstrasse
+Rüschlikon, Loorain
+Rüschlikon, Eggrain
+Rüschlikon, Moosstrasse
+Rüschlikon, Park im Grüene
+Zürich, Schauenberg
+Zürich, Lerchenrain
+Zürich, Vulkanstrasse
+Zürich, Juchhof
+Schlieren, Industrie Gaswerk
+Schlieren, Rütistrasse
+Schlieren, Bahnhof Nord
+Schlieren, Am Rietpark
+Schlieren, Goldschlägistrasse
+Schlieren, Meuchwis
+Zürich, Maillartstrasse
+Zürich, Stierenried
+Zollikerberg, Spital
+Zollikerberg, Hasenbart
+Zollikerberg, Trichtenhauserm.
+Zürich, Trichtisal
+Zürich, Trichtenhausenfussweg
+Zürich, Wiesliacher
+Zürich, Segeten
+Zürich, Stodolastrasse
+Zürich, Witikon Zentrum
+Zürich, Buchholz
+Spreitenbach, Glattler
+Volketswil, Volkiland Chliriet
+Volketswil, Hofwisen
+Zürich, Altenhofstrasse
+Zürich, Wonnebergstrasse
+Zürich, Flühgasse
+Zürich, EPI-Klinik
+Zürich, Im Walder
+Zürich, Bleulerstrasse
+Küsnacht ZH, Allmend
+Küsnacht ZH, Hesligenstrasse
+Küsnacht ZH, Himmelistrasse
+Küsnacht ZH, Bergstrasse
+Küsnacht ZH, Obere Heslibachst
+Küsnacht ZH, Oberwacht
+Küsnacht ZH, Ränkestrasse
+Zollikerberg, Resirain
+Zollikerberg, Sennhof
+Zollikerberg, Oberhueb
+Zürich, Strickhof
+Zürich, Langensteinenstrasse
+Zürich, Schäppiweg
+Zürich, Germaniastrasse
+Zürich, Rigiblick
+Zürich, Spyristeig
+Zürich, Krönleinstrasse
+Zürich, Heubeeriweg
+Zürich, Flobotstrasse
+Zürich, Schanzackerstrasse
+Dietikon, Gyrhalden
+Dietikon, Weidstrasse
+Dietikon, Lätten
+Dietikon, Weinberg
+Kilchberg ZH, Bahnhof
+Kilchberg ZH,Schulhaus Dorfstr
+Kilchberg ZH, Schwelle
+Kilchberg ZH, Kreuzstrasse
+Kilchberg ZH, Gottlieb-Binder
+Kilchberg ZH, Altersheim
+Kilchberg ZH, Kirche
+Kilchberg ZH, Lindt & Sprüngli
+Kilchberg ZH, Schoorenstrasse
+Kilchberg ZH, Stockengut
+Kilchberg ZH, Mythenstrasse
+Kilchberg ZH, Bächlerstrasse
+Kilchberg ZH, Obere Hornhalde
+Kilchberg ZH, Emilienheim
+Kilchberg ZH, Breitloo
+Kilchberg ZH, Schlimbergstr.
+Kilchberg ZH, Weinbergstrasse
+Kilchberg ZH, Hornhaldenstr.
+Kilchberg ZH, Paradiessteig
+Kilchberg ZH, Sanatorium
+Kilchberg ZH, Auf Brunnen
+Zumikon, Dorfzentrum
+Zumikon, Waltikon
+Zumikon, Gössikon
+Küsnacht ZH, Zentrum
+Küsnacht ZH, Bahnhof
+Küsnacht ZH, Reform. Kirche
+Küsnacht ZH, Hallenbad
+Küsnacht ZH, Gartenstrasse
+Küsnacht ZH, Oberfeld
+Zürich, Appenzellerstrasse
+Zürich, Am Börtli
+Zürich, Kappenbühlweg
+Zürich, Michelstrasse
+Zürich, Friedhof Hönggerberg
+Zürich, Schützenhaus Höngg
+Dietikon, Marmori-Weiher
+Bergdietikon, Baltenschwil
+Bergdietikon, Rietwies
+Bergdietikon, Bergli
+Bergdietikon, Bernold
+Bergdietikon, Vorbühl
+Kindhausen AG, Eichholz
+Kindhausen AG
+Bergdietikon, Dünni
+Zürich, Ettenfeld
+Glattbrugg, Frohbühlstrasse
+Glattbrugg, Post
+Glattbrugg, Zentrum
+Glattbrugg, Glatthof
+Opfikon, Schwimmbad
+Opfikon, Schulstrasse
+Glattbrugg, Mode Center TMC
+D'dorf, Sportanl Heerenschürli
+Dübendorf, Neugut Süd
+Wallisellen, Florastrasse
+Waldegg, Birmensdorferstrasse
+Waldegg, Leuen
+Birmensdorf ZH, Sternen/WSL
+Birmensdorf ZH, Untere Risi
+Uitikon, Dorf
+Waldegg, Post
+Rüschlikon, Rebsteig
+Thalwil, Seehaldenstrasse
+Thalwil, Sonnenberg
+Thalwil, Feldstrasse
+Thalwil, Schützenhaus
+Thalwil, Mühlebachplatz
+Thalwil, Zentrum
+Thalwil, Post
+Regensdorf, Chrüzächer
+Dübendorf, Meiershofstrasse
+Dübendorf, City Center
+Dübendorf, Lindenplatz
+Dübendorf, Bahnhof Nord
+Dübendorf, Flugplatz
+Dübendorf, Innovationspark
+Wangen, Stierwisen
+Wangen, Hätzelwisen
+Wangen, Weidli
+Dübendorf, Zelglistrasse
+Dübendorf, Grüzenstrasse
+Dübendorf, Kreuzbühl
+Zürich, Im Ebnet
+Rümlang, Letten
+Rümlang, Hörnlistrasse
+Rümlang, Gemeindehaus
+Rümlang, Oberdorf
