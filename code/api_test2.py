@@ -46,6 +46,9 @@ def parse_steps(route):
     steps = []
     for dict in route.get("legs")[0].get("steps"):
         if(dict.get("travel_mode")=="TRANSIT"):
+
+            if(dict.get("transit_details").get("line").get("vehicle").get("name")!="Bus" and dict.get("transit_details").get("line").get("vehicle").get("name")!="Tram"):
+                continue
             dist = dict.get("distance").get("value")
             dur = timedelta(seconds=dict.get("duration").get("value"))
             dep = dict.get("transit_details").get("departure_stop").get("name")
@@ -104,10 +107,10 @@ for r in range(0,len(routes)):
         if(routes[r][1][j].get("type")=="TRANSIT"):
 
 
-            dep = process.extractOne(routes[r][1][j].get("dep"),halteList)
-            print(dep)
+            dep = process.extractOne(routes[r][1][j].get("dep"),halteList)[0]
             
-            arr = process.extractOne(routes[r][1][j].get("arr"),halteList)
+            print(routes[r][1][j].get("arr"))
+            arr = process.extractOne(routes[r][1][j].get("arr"),halteList)[0]
             print(arr)
 
 
