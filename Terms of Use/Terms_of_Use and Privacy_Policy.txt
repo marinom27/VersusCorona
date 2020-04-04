@@ -1,0 +1,10 @@
+By using the code and its applications users are bound by Google's Terms of Service (https://policies.google.com/terms?hl=en).
+The Code uses Google Maps APIs. Please note the Google Privacy Policy: https://policies.google.com/privacy
+Furthermore, the use of the Distance Matrix API is governed by the Google Maps Platform terms of Service: https://cloud.google.com/maps-platform/terms/  . Please also double check with https://developers.google.com/maps/documentation/distance-matrix/policies  .
+
+
+We also use the Python Client for Google Maps Services, provided on github by Justin Poehnelt (jpoehnelt), which can be found here: https://github.com/googlemaps/google-maps-services-python
+The beforementioned repository is published under Apache License 2.0. (http://www.apache.org/licenses/LICENSE-2.0)
+
+
+
