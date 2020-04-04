@@ -1,4 +1,4 @@
-#test maps api
+
 import googlemaps
 from datetime import datetime
 import os
@@ -6,10 +6,6 @@ from pprint import pprint
 from datetime import *
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
-
-
-
-
 
 
 def dir_deptime(start,dest,dep_time):
@@ -72,14 +68,12 @@ def parse_steps(route):
     return steps
 
 
-
-
-
-halteList = [line.rstrip('\n') for line in open("../data/vbz_fahrgastzahlen/stationen.txt")]
+halteList = [line.rstrip('\n') for line in open("../data/vbz_fahrgastzahlen/stationen.txt")] #data bus and tram stations
 #print(halteList)
 
 hour =11
 minute = 15
+timebefore = 120 #time free before arrival time (in mins)
 dt = datetime.now().replace(hour=hour,minute=minute,day=6) #monday
 start = "Zehntenhausplatz,Zürich"
 destination = "ETH Zürich"
@@ -87,20 +81,16 @@ now = datetime.now()
 
 routes = []
 
+for i in range (0,timebefore,30):
 
 
-
-
-
-for i in range (0,120,30):
-
-
-    route= dir_arrtime(start,destination,dt-timedelta(minutes=i))
+    route= dir_arrtime(start,destination,dt-timedelta(minutes=i))   #dir_arrtime for arrivaltime; dir_deptime for deptime
     for j in range(0,len(route)):
-        r=[parse_overral(route[j]),parse_steps(route[j]),0]
+        r=[parse_overral(route[j]),parse_steps(route[j]),0] #[overall route infos,steps infos,rating]
 
         if r not in routes:
             routes.append(r)
+#pprint(routes)
 
 for r in range(0,len(routes)):
     for j in range(len(routes[r][1])):
@@ -108,15 +98,20 @@ for r in range(0,len(routes)):
 
 
             dep = process.extractOne(routes[r][1][j].get("dep"),halteList)[0]
-            
-            print(routes[r][1][j].get("arr"))
+            dep_time=routes[r][1][j].get("dep_time")
+            towards = routes[r][1][j].get("towards")
+            line = routes[r][1][j].get("line")
+            print(dep,dep_time,"Line: ",line, "towards: ",towards)
+
+            #pred_dep = predict_besetzung(dep_time, line, dep, richtung)
+
+
+
             arr = process.extractOne(routes[r][1][j].get("arr"),halteList)[0]
-            print(arr)
+            arr_time=routes[r][1][j].get("arr_time")
+            print(arr,arr_time)
+
+            #pred_arr = predict_besetzung(arr_time, line, arr, richtung)
 
 
     print()
-
-
-
-
-#pprint(routes)
