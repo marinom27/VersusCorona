@@ -93,7 +93,7 @@ for i in range(len(endstations)):
 
 
 
-get_vbz_context()
+#get_vbz_context()
 
 
 #get context
@@ -176,6 +176,16 @@ while(not finished):
         if(routes[r][2]<=bestratio):
             bestroute=routes[r][:]
             bestratio=routes[r][2]
+    for dict in bestroute[1]:
+        if(dict.get("type")=="WALKING"):
+            dict["dur"]=str(dict.get("dur"))
+        else:
+            dict["arr_time"]=str(dict.get("arr_time"))
+            dict["dep_time"]=str(dict.get("dep_time"))
+            dict["dur"]=str(dict.get("dur"))
+            
+
+
     print()
     print("-----best route:-----")
     print()
