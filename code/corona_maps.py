@@ -124,7 +124,9 @@ for i in range (0,timebefore,30):
         if r not in routes:
             routes.append(r)
 #pprint(routes)
+print()
 print("Calculating ",len(routes), "possible routes...")
+print()
 for r in range(0,len(routes)):
     ratio=0
     count=0
