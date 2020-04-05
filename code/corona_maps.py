@@ -167,7 +167,7 @@ while(not finished):
         if(count!=0):
             ratio/=count*2
             routes[r][2]=ratio
-            print(ratio)
+            print("occupancy rate: ",ratio)
         print()
 
     bestratio =1
@@ -177,6 +177,7 @@ while(not finished):
             bestroute=routes[r][:]
             bestratio=routes[r][2]
     bestroute[0]["overall_duration"]=str(bestroute[0].get("overall_duration"))
+    
     for dict in bestroute[1]:
         if(dict.get("type")=="WALKING"):
             dict["dur"]=str(dict.get("dur"))
@@ -191,6 +192,7 @@ while(not finished):
     print("-----best route:-----")
     print()
     pprint(bestroute)
+    print("best mean occupancy rate: " ,bestroute[2])
     print()
 
     inp = input("do you want to start another request?y/n ")
