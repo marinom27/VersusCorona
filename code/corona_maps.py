@@ -98,9 +98,9 @@ for i in range(len(endstations)):
 
 start = input("From? ")
 destination = input("To? ")
-hour = input("Hour? ")
-minute = input("Minute ")
-timebefore = input("Time flexibility in mins? ")
+hour = int(input("Hour? "))
+minute = int(input("Minute "))
+timebefore = int(input("Time flexibility in mins? "))
 """
 hour =11
 minute = 15
