@@ -95,14 +95,21 @@ for i in range(len(endstations)):
 
 
 
-#line 11 richtung 1 is twards auzelg
 
+start = input("From? ")
+destination = input("To? ")
+hour = input("Hour? ")
+minute = input("Minute ")
+timebefore = input("Time flexibility in mins? ")
+"""
 hour =11
 minute = 15
 timebefore = 120 #time free before arrival time (in mins)
-dt = datetime.now().replace(hour=hour,minute=minute,day=6) #monday
 start = "Zehntenhausplatz,Zürich"
 destination = "ETH Zürich"
+"""
+dt = datetime.now().replace(hour=hour,minute=minute,day=6) #monday
+
 now = datetime.now()
 
 routes = []
