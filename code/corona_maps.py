@@ -93,7 +93,7 @@ for i in range(len(endstations)):
 
 
 
-#get_vbz_context()
+#vbz_cntext = get_vbz_context()
 
 
 #get context
@@ -162,7 +162,7 @@ while(not finished):
 
 
 
-                #ratio+=predict_corona(dep,dep_time,arr,arr_time,line,dir)
+                #ratio+=predict_marino(dep,dep_time,arr,arr_time,line,dir,vbz_cntext)
 
         if(count!=0):
             ratio/=count*2
