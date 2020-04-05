@@ -212,7 +212,7 @@ while not finished:
     bestratio = 1.0
     bestroute = []
     for r in range(len(routes)):
-        if routes[r][2] <= bestratio:
+        if routes[r][2] <= bestratio and routes[r][2]>0.0 :
             bestroute = routes[r][:]
             bestratio = routes[r][2]
     bestroute[0]["overall_duration"] = str(bestroute[0].get("overall_duration"))
