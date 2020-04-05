@@ -96,6 +96,8 @@ for i in range(len(endstations)):
 
 
 
+#get context
+
 start = input("From? ")
 destination = input("To? ")
 h = int(input("Hour? "))
@@ -140,6 +142,7 @@ for r in range(0,len(routes)):
             line = routes[r][1][j].get("line")
 
             dir = dirs.get(process.extractOne(towards,halteList)[0])
+            """
             print(dep,dep_time,"Line: ",line, "towards: ",dir)
             #pred_dep =predict_besetzung(dep_time, line, dep, dir)
             ratio_dep =1#capacities.get(32).get("overall")
@@ -152,6 +155,10 @@ for r in range(0,len(routes)):
             #pred_arr = predict_besetzung(arr_time, line, arr, dir)
             ratio_arr = 1# pred_dep[0]/capacities.get(32).get("overall")
             #print(ratio_arr)
+            """
+
+
+
             ratio+=(ratio_dep+ratio_arr)
 
     if(count!=0):
