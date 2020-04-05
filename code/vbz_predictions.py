@@ -371,7 +371,7 @@ def predict_marino(a, a_time, b, b_time, numstations, line, direction, vbz_conte
     tag = get_tag(a_time)
     besetzungen = []
     time_bin = get_time_bin(a_time)
-    X_pred = [[line, direction, station, time_bin, tag] for stations in stations]
+    X_pred = [[line, direction, station, time_bin, tag] for station in stations]
     X_pred_hot = enc.transform(X_pred)
     y_pred = model.predict(X_pred_hot)
     besetzungen.append(y_pred)
