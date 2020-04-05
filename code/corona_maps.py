@@ -124,7 +124,7 @@ for i in range (0,timebefore,30):
         if r not in routes:
             routes.append(r)
 #pprint(routes)
-
+print("Calculating ",len(routes), "possible routes...")
 for r in range(0,len(routes)):
     ratio=0
     count=0
@@ -140,7 +140,7 @@ for r in range(0,len(routes)):
             dir = dirs.get(process.extractOne(towards,halteList)[0])
             print(dep,dep_time,"Line: ",line, "towards: ",dir)
             #pred_dep =predict_besetzung(dep_time, line, dep, dir)
-            ratio_dep =capacities.get(32).get("overall")
+            ratio_dep =1#capacities.get(32).get("overall")
             #print(ratio_dep)
 
             arr = process.extractOne(routes[r][1][j].get("arr"),halteList)[0]
