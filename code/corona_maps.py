@@ -112,14 +112,14 @@ while(not finished):
     destination = "ETH Zürich"
     """
     dt = datetime.now().replace(hour=h+2,minute=m,day=6) #monday
-    
+
     now = datetime.now()
-    
+
     routes = []
-    
+
     for i in range (0,timebefore,30):
-        
-        
+
+
         route= dir_arrtime(start,destination,dt-timedelta(minutes=i))   #dir_arrtime for arrivaltime; dir_deptime for deptime
         for j in range(0,len(route)):
             r=[parse_overral(route[j]),parse_steps(route[j]),0] #[overall route infos,steps infos,rating]
@@ -141,27 +141,29 @@ while(not finished):
                 dep_time=routes[r][1][j].get("dep_time")
                 towards = routes[r][1][j].get("towards")
                 line = routes[r][1][j].get("line")
-                
+
                 dir = dirs.get(process.extractOne(towards,halteList)[0])
-                """
+
                 print(dep,dep_time,"Line: ",line, "towards: ",dir)
                 #pred_dep =predict_besetzung(dep_time, line, dep, dir)
+
+
                 ratio_dep =1#capacities.get(32).get("overall")
                 #print(ratio_dep)
-                
+
                 arr = process.extractOne(routes[r][1][j].get("arr"),halteList)[0]
                 arr_time=routes[r][1][j].get("arr_time")
                 print(arr,arr_time)
-                
+
                 #pred_arr = predict_besetzung(arr_time, line, arr, dir)
                 ratio_arr = 1# pred_dep[0]/capacities.get(32).get("overall")
                 #print(ratio_arr)
-                """
 
 
 
-                #ratio+=(ratio_dep+ratio_arr)
-                
+
+                ratio+=(ratio_dep+ratio_arr)
+
         if(count!=0):
             ratio/=count*2
             routes[r][2]=ratio
