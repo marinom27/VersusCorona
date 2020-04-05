@@ -4,12 +4,15 @@ import numpy as np
 import pandas as pd
 from sklearn.kernel_ridge import KernelRidge
 from sklearn.linear_model import Ridge, LinearRegression
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import OneHotEncoder, PolynomialFeatures, normalize
+from sklearn.model_selection import train_test_split
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.optimizers import SGD
+from tensorflow.keras.layers import Dense
+from tensorflow.keras import regularizers
+
 import seaborn as sns
 import matplotlib.pyplot as plt
-from tensorflow.keras.models import load_model
-
-from vbz_training import fit_neural_network, fit_regression_model, preprocess
 
 import warnings
 
@@ -225,127 +228,50 @@ def clean_na(reisende_na):
     return reisende
 
 
-def longest_chain(chain, stations, rec, maxrec, stop):
-    last_station = chain[0]
-    # print(last_station)
-    next_stations = list(
-        stations.loc[stations["Nachste_Haltestelle"] == last_station]["Haltestelle"]
+def preprocess(reisende):
+    X = reisende[["Linie", "Richtung", "Haltestelle", "Uhrzeit_Bin", "Tag"]]
+    y = reisende["Besetzung"].to_numpy().reshape(-1, 1)
+
+    enc = OneHotEncoder(handle_unknown="ignore").fit(X)
+
+    X_hot = enc.transform(X).toarray()
+    return X_hot, y
+
+
+def fit_regression_model(reisende):
+    X, y = preprocess(reisende)
+    model = Ridge(alpha=10, fit_intercept=False)
+    model.fit(X, y)
+    return model
+
+
+def fit_neural_network(reisende):
+    X, y = preprocess(reisende)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.20, random_state=42
     )
-    # print(next_stations)
-    if len(next_stations) == 0:
-        return chain
-    if stop == last_station:
-        return chain
-    if rec >= maxrec:
-        return chain
-    max_chain = chain
-    for station in next_stations:
-        # print(f"{last_station} -> {station}")
-        if station == last_station:
-            return chain
-        # time.sleep(1)
-        new_chain = [station] + chain
-        new_longestchain = longest_chain(new_chain, stations, rec + 1, maxrec, stop)
-        if len(new_longestchain) > len(max_chain):
-            max_chain = new_longestchain
-    return max_chain
 
-
-def stationsbetween(line, richtung, a, b, numstations, reisende):
-    stations = reisende.loc[
-        (reisende["Linie"] == line) & (reisende["Richtung"] == richtung)
-    ]
-    stations = stations.drop_duplicates(subset=["Haltestelle", "Nachste_Haltestelle"])
-    return longest_chain([b], stations, 0, numstations, a)
-
-
-def plot_grid(line_stations, direction, reisende):
-    reisende["Haltestelle_Linie"] = reisende["Haltestelle"].astype("str") + reisende[
-        "Linie"
-    ].astype("str")
-    line_stations = [str(s) + str(l) for l, s in line_stations]
-    data = reisende[reisende["Haltestelle_Linie"].isin(line_stations)]
-    data = data[data["Richtung"] == 1]
-    data["Haltestelle"] = data["Haltestelle"].cat.remove_unused_categories()
-    data["Tag"] = data["Tag"].cat.remove_unused_categories()
-
-    g = sns.FacetGrid(
-        data,
-        row="Haltestelle_Linie",
-        col="Tag",
-        hue="Tagtyp_Id",
-        margin_titles=True,
-        height=5,
+    model = Sequential()
+    model.add(
+        Dense(
+            units=400,
+            activation="relu",
+            input_dim=892,
+            kernel_regularizer=regularizers.l2(0.01),
+        )
     )
-    (g.map(sns.scatterplot, "Uhrzeit_Bin", "Besetzung")).add_legend()
+    model.add(Dense(units=1))
 
+    sgd = SGD(learning_rate=0.005, momentum=0.0, nesterov=False)
 
-def plot(line, station, direction, reisende, predictions=None):
-    data = reisende[
-        (reisende["Linie"] == line)
-        & (reisende["Haltestelle"] == station)
-        & (reisende["Richtung"] == direction)
-    ]
-    # sns.scatterplot(x='Uhrzeit_Bin', y='Durchschnitt', data=data)
-    sns.scatterplot(x="Uhrzeit_Bin", y="Besetzung", hue="Tag", data=data)
-    if not predictions is None:
-        print(len(predictions))
-        sns.lineplot(x=range(num_bins), y=predictions)
+    model.compile(
+        loss="mean_squared_error", optimizer=sgd, metrics=["mean_squared_error"]
+    )
 
-
-def get_vbz_context(bins_per_hour=4):
-    """Here the model ist fittet and the lines are calculated.
-
-    This returns a context object containing the model parameters and the stops for each line"""
-    print("donwloading raw vbz data")
-    reisende_raw, linie, tagtyp, haltestellen = get_data_local()
-    print("cleaning vbz data")
-    reisende_na = clean_reisende(reisende_raw, linie, tagtyp, haltestellen)
-    reisende = clean_na(reisende_na)
-
-    num_bins = 24 * bins_per_hour
-    uhrzeit_bins = pd.cut(reisende["Uhrzeit"], num_bins, labels=range(num_bins))
-    reisende["Uhrzeit_Bin"] = uhrzeit_bins
-    print("loading model")
-    try:
-        model = load_model("vbz_model.h5")
-    except:
-        print("Loading failed. Training model")
-        model = fit_neural_network(reisende)
-    # print("building vbz network")
-    # vbz_network = build_vbz_network(reisende_na)
-
-    return model, reisende  # , vbz_network
-
-
-def get_tag(python_datetime):
-    weekday = python_datetime.weekday()
-    if weekday < 5:
-        return "Wochentag"
-    if weekday == 5:
-        return "Samstag"
-    if weekday == 6:
-        return "Sonntag"
-
-
-def get_time_bin(python_datetime, bins_per_hours=4):
-    hours = python_datetime.hour
-    minutes = python_datetime.minute
-    return hours * 4 + (minutes % 15)
-
-
-def predict_marino(a, a_time, b, b_time, numstations, line, direction, vbz_context):
-    """
-    dep: departure station
-    dep_time:
-    """
-    model, reisende = vbz_context
-    stations = stationsbetween(line, direction, a, b, numstations, reisende)
-    tag = get_tag(a_time)
-    time_bin = get_time_bin(a_time)
-    X_pred = [[line, direction, station, time_bin, tag] for station in stations]
-    X_pred_hot = preprocess(X_pred)
-    y_pred = model.predict(X_pred_hot)
-    # plot(line, station, direction, reisende, y_pred)
-
-    return max(y_pred)
+    model.fit(X_train, y_train, epochs=10, batch_size=64)
+    loss_and_metrics = model.evaluate(X_test, y_test, batch_size=128)
+    print(model.summary())
+    print(loss_and_metrics)
+    model.reset_metrics()
+    model.save("vbz_model.h5")
+    return model
