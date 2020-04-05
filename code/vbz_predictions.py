@@ -8,6 +8,10 @@ from sklearn.preprocessing import OneHotEncoder
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+import warnings
+
+warnings.filterwarnings("ignore")
+
 sns.set(style="ticks", color_codes=True)
 
 
@@ -331,9 +335,8 @@ def get_vbz_context(bins_per_hour=4):
     reisende = clean_na(reisende_na)
 
     num_bins = 24 * bins_per_hour
-    reisende["Uhrzeit_Bin"] = pd.cut(
-        reisende["Uhrzeit"], num_bins, labels=range(num_bins)
-    )
+    uhrzeit_bins = pd.cut(reisende["Uhrzeit"], num_bins, labels=range(num_bins))
+    reisende["Uhrzeit_Bin"] = uhrzeit_bins
     print("training model")
     enc, model = fit_model(reisende)
     # print("building vbz network")
