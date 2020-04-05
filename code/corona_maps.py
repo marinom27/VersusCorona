@@ -170,10 +170,10 @@ while(not finished):
             print(ratio)
         print()
 
-    bestratio =0
+    bestratio =1
     bestroute=[]
     for r in range(len(routes)) :
-        if(routes[r][2]>=bestratio):
+        if(routes[r][2]<=bestratio):
             bestroute=routes[r][:]
             bestratio=routes[r][2]
     print()
