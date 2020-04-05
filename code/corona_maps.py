@@ -9,7 +9,7 @@ import csv
 import numpy as np
 import time
 
-from vbz_predictions.py import predict_marino, get_vbz_context
+from vbz_predictions import predict_marino, get_vbz_context
 
 
 def dir_deptime(start, dest, dep_time):
