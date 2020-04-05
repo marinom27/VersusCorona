@@ -130,7 +130,7 @@ while not finished:
     start = input("From? ")
     destination = input("To? ")
     h = int(input("Hour? "))
-    m = int(input("Minute "))
+    m = int(input("Minute? "))
     timebefore = int(input("Time flexibility in mins? "))
     """
     hour =11
