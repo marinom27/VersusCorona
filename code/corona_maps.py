@@ -148,7 +148,7 @@ while(not finished):
                 #pred_dep =predict_besetzung(dep_time, line, dep, dir)
 
 
-                ratio_dep =1#capacities.get(32).get("overall")
+                #ratio_dep =1#capacities.get(32).get("overall")
                 #print(ratio_dep)
 
                 arr = process.extractOne(routes[r][1][j].get("arr"),halteList)[0]
@@ -156,19 +156,32 @@ while(not finished):
                 print(arr,arr_time)
 
                 #pred_arr = predict_besetzung(arr_time, line, arr, dir)
-                ratio_arr = 1# pred_dep[0]/capacities.get(32).get("overall")
+                #ratio_arr = 1# pred_dep[0]/capacities.get(32).get("overall")
                 #print(ratio_arr)
 
 
 
 
-                ratio+=(ratio_dep+ratio_arr)
+                #ratio+=predict_corona(dep,dep_time,arr,arr_time,line,dir)
 
         if(count!=0):
             ratio/=count*2
             routes[r][2]=ratio
             print(ratio)
         print()
+
+    bestratio =0
+    bestroute=[]
+    for r in range(len(routes)) :
+        if(routes[r][2]>=bestratio):
+            bestroute=routes[r][:]
+            bestratio=routes[r][2]
+    print()
+    print("-----best route:-----")
+    print()
+    pprint(bestroute)
+    print()
+
     inp = input("do you want to start another request?y/n ")
     if (inp == "n"):
         finished = True
