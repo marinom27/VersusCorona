@@ -146,19 +146,13 @@ while(not finished):
                 direction = dirs.get(process.extractOne(towards,halteList)[0])
 
                 print(dep,dep_time,"Line: ",line, "towards: ",towards)
-                #pred_dep =predict_besetzung(dep_time, line, dep, dir)
 
-
-                #ratio_dep =1#capacities.get(32).get("overall")
-                #print(ratio_dep)
 
                 arr = process.extractOne(routes[r][1][j].get("arr"),halteList)[0]
                 arr_time=routes[r][1][j].get("arr_time")
                 print(arr,arr_time)
 
-                #pred_arr = predict_besetzung(arr_time, line, arr, dir)
-                #ratio_arr = 1# pred_dep[0]/capacities.get(32).get("overall")
-                #print(ratio_arr)
+                
 
                 try:
                     cap = capacities.get(int(line)).get("overall")
