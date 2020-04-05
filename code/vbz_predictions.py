@@ -279,7 +279,7 @@ def fit_model(reisende):
 
     model = LinearRegression(fit_intercept=False)
     model.fit(X_hot, y)
-    return model
+    return enc, model
 
 
 def get_vbz_context(bins_per_hour=4):
@@ -301,9 +301,26 @@ def get_vbz_context(bins_per_hour=4):
     # print("building vbz network")
     # vbz_network = build_vbz_network(reisende_na)
 
-    return model  # , vbz_network
+    return enc, model, reisende  # , vbz_network
 
-def predict_marino(dep,dep_time,dest,dest_time,line,dir, vbz_context):
+
+def get_tag(python_datetime):
+    weekday = python_datetime.weekday()
+    if weekday < 5:
+        return "Wochentag"
+    if weekday == 5:
+        return "Samstag"
+    if weekday == 6:
+        return "Sonntag"
+
+
+def get_time_bin(python_datetime, bins_per_hours=4):
+    hours = python_datetime.hours
+    minutes = python_datetime.minutes /
+    return hours*4 + (minutes % 15)
+
+
+def predict_marino(a, a_time, b, b_time, numstations, line, direction, vbz_context):
     """
     dep: departure station
     dep_time:
@@ -311,4 +328,18 @@ def predict_marino(dep,dep_time,dest,dest_time,line,dir, vbz_context):
 
 
     """
-    stations = 
+    enc, model, reisende = vbz_context
+    stations = stationsbetween(line, richtung, a, b, numstations, reisende)
+    tag = get_tag(a_time)
+    besetzungen = []
+    for station in stations:
+        time_bin = get_time_bin(a_time)
+
+        X_pred = [line, direction, station, time_bin, tag]
+        X_pred_hot = enc.transform(X_pred)
+
+        y_pred = model.predict(X_pred_hot)
+        besetzungen.append(y_pred)
+        plot(line, station, direction, reisende, y_pred)
+
+    return max(besetzungen)
