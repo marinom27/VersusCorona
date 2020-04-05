@@ -36,8 +36,8 @@ def parse_overral(route):
     duration = timedelta(seconds=route.get("legs")[0].get("duration").get("value"))
 
 
-
-    return distance, duration
+    dict = {"overall_distance":distance,"overall_duration":duration}
+    return dict
 
 
 def parse_steps(route):
@@ -176,6 +176,7 @@ while(not finished):
         if(routes[r][2]<=bestratio):
             bestroute=routes[r][:]
             bestratio=routes[r][2]
+    bestroute[0]["overall_duration"]=str(bestroute[0].get("overall_duration"))
     for dict in bestroute[1]:
         if(dict.get("type")=="WALKING"):
             dict["dur"]=str(dict.get("dur"))
@@ -183,7 +184,7 @@ while(not finished):
             dict["arr_time"]=str(dict.get("arr_time"))
             dict["dep_time"]=str(dict.get("dep_time"))
             dict["dur"]=str(dict.get("dur"))
-            
+
 
 
     print()
