@@ -107,7 +107,7 @@ now = datetime.now()
 
 routes = []
 
-for i in range (0,timebefore,60):
+for i in range (0,timebefore,30):
 
 
     route= dir_arrtime(start,destination,dt-timedelta(minutes=i))   #dir_arrtime for arrivaltime; dir_deptime for deptime
