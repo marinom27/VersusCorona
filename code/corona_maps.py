@@ -25,7 +25,7 @@ def dir_arrtime(start,dest,arr_time):
     api = os.environ['GOOGLE_API_KEY']
     gmaps = googlemaps.Client(key=api)
     route = gmaps.directions(start,dest,mode="transit",arrival_time=arr_time,alternatives=True)
-    
+
     return route
 
 
@@ -142,8 +142,8 @@ while(not finished):
                 dep_time=routes[r][1][j].get("dep_time")
                 towards = routes[r][1][j].get("towards")
                 line = routes[r][1][j].get("line")
-
-                dir = dirs.get(process.extractOne(towards,halteList)[0])
+                stops = routes[r][1][j].get("stops")
+                direction = dirs.get(process.extractOne(towards,halteList)[0])
 
                 print(dep,dep_time,"Line: ",line, "towards: ",towards)
                 #pred_dep =predict_besetzung(dep_time, line, dep, dir)
@@ -165,7 +165,7 @@ while(not finished):
                 except:
                     cap = 150
 
-                #ratio+=predict_marino(dep,dep_time,arr,arr_time,int(line),str(dir),vbz_cntext)/cap
+                #ratio+=predict_marino(dep,dep_time,arr,arr_time,int(stops),str(line),int(direction),vbz_context)/cap
 
         if(count!=0):
             ratio/=count*2
