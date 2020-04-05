@@ -93,7 +93,7 @@ for i in range(len(endstations)):
 
 
 
-#vbz_context = get_vbz_context()
+vbz_context = get_vbz_context()
 
 
 #get context
@@ -152,14 +152,14 @@ while(not finished):
                 arr_time=routes[r][1][j].get("arr_time")
                 print(arr,arr_time)
 
-                
+
 
                 try:
                     cap = capacities.get(int(line)).get("overall")
                 except:
                     cap = 150
 
-                #ratio+=predict_marino(dep,dep_time,arr,arr_time,int(stops),str(line),int(direction),vbz_context)/cap
+                ratio+=predict_marino(dep,dep_time,arr,arr_time,int(stops),str(line),int(direction),vbz_context)/cap
 
         if(count!=0):
             ratio/=count*2
