@@ -316,8 +316,8 @@ def get_tag(python_datetime):
 
 def get_time_bin(python_datetime, bins_per_hours=4):
     hours = python_datetime.hours
-    minutes = python_datetime.minutes /
-    return hours*4 + (minutes % 15)
+    minutes = python_datetime.minutes
+    return hours * 4 + (minutes % 15)
 
 
 def predict_marino(a, a_time, b, b_time, numstations, line, direction, vbz_context):
