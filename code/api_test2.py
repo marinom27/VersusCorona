@@ -101,8 +101,8 @@ hour =11
 minute = 15
 timebefore = 120 #time free before arrival time (in mins)
 dt = datetime.now().replace(hour=hour,minute=minute,day=6) #monday
-start = "ETH Zürich"#"Zehntenhausplatz,Zürich"
-destination = "flughafen Zürich"#"ETH Zürich"
+start = "Zehntenhausplatz,Zürich"
+destination = "ETH Zürich"
 now = datetime.now()
 
 routes = []
@@ -113,7 +113,7 @@ for i in range (0,timebefore,60):
     route= dir_arrtime(start,destination,dt-timedelta(minutes=i))   #dir_arrtime for arrivaltime; dir_deptime for deptime
     for j in range(0,len(route)):
         r=[parse_overral(route[j]),parse_steps(route[j]),0] #[overall route infos,steps infos,rating]
-        pprint(r)
+        #pprint(r)
         if r not in routes:
             routes.append(r)
 #pprint(routes)
