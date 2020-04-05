@@ -98,8 +98,8 @@ for i in range(len(endstations)):
 
 start = input("From? ")
 destination = input("To? ")
-hour = int(input("Hour? "))
-minute = int(input("Minute "))
+h = int(input("Hour? "))
+m = int(input("Minute "))
 timebefore = int(input("Time flexibility in mins? "))
 """
 hour =11
@@ -108,7 +108,7 @@ timebefore = 120 #time free before arrival time (in mins)
 start = "Zehntenhausplatz,Zürich"
 destination = "ETH Zürich"
 """
-dt = datetime.now().replace(hour=hour,minute=minute,day=6) #monday
+dt = datetime.now().replace(hour=h+2,minute=m,day=6) #monday
 
 now = datetime.now()
 
