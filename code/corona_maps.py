@@ -93,7 +93,7 @@ for i in range(len(endstations)):
 
 
 
-#vbz_cntext = get_vbz_context()
+#vbz_context = get_vbz_context()
 
 
 #get context
@@ -177,7 +177,7 @@ while(not finished):
             bestroute=routes[r][:]
             bestratio=routes[r][2]
     bestroute[0]["overall_duration"]=str(bestroute[0].get("overall_duration"))
-    
+
     for dict in bestroute[1]:
         if(dict.get("type")=="WALKING"):
             dict["dur"]=str(dict.get("dur"))
