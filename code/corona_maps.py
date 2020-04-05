@@ -93,7 +93,7 @@ for i in range(len(endstations)):
 
 
 
-
+get_vbz_context()
 
 
 #get context
