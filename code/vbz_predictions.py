@@ -49,6 +49,44 @@ def get_data_github():
     return reisende_raw, linie, tagtyp, haltestellen
 
 
+def get_data_local():
+    filenames_suffix = [
+        "aa",
+        "ab",
+        "ac",
+        "ad",
+        "ae",
+        "af",
+        "ag",
+        "ah",
+        "ai",
+        "aj",
+        "ak",
+        "al",
+        "am",
+    ]
+    reisende_raws = []
+    for suffix in filenames_suffix:
+        url = f"../data/vbz_fahrgastzahlen/REISENDE_PART{suffix}.csv"
+        reisende_raws.append(pd.read_csv(url, sep=";", header=None, low_memory=False))
+
+    url = f"../data/vbz_fahrgastzahlen/LINIE.csv"
+    linie = pd.read_csv(url, sep=";").set_index("Linien_Id")
+
+    url = f"../data/vbz_fahrgastzahlen/TAGTYP.csv"
+    tagtyp = pd.read_csv(url, sep=";").set_index("Tagtyp_Id")
+
+    url = f"../data/vbz_fahrgastzahlen/HALTESTELLEN.csv"
+    haltestellen = pd.read_csv(url, sep=";").set_index("Haltestellen_Id")
+
+    reisende_raw = pd.concat(reisende_raws)
+    new_columns = reisende_raw.iloc[0]
+    reisende_raw = reisende_raw.iloc[1:]
+    reisende_raw.columns = new_columns
+
+    return reisende_raw, linie, tagtyp, haltestellen
+
+
 def clean_reisende(reisende, linie, tagtyp, haltestellen):
     reisende = reisende.rename(
         columns={
@@ -287,7 +325,7 @@ def get_vbz_context(bins_per_hour=4):
 
     This returns a context object containing the model parameters and the stops for each line"""
     print("donwloading raw vbz data")
-    reisende_raw, linie, tagtyp, haltestellen = get_data_github()
+    reisende_raw, linie, tagtyp, haltestellen = get_data_local()
     print("cleaning vbz data")
     reisende_na = clean_reisende(reisende_raw, linie, tagtyp, haltestellen)
     reisende = clean_na(reisende_na)
@@ -329,7 +367,7 @@ def predict_marino(a, a_time, b, b_time, numstations, line, direction, vbz_conte
 
     """
     enc, model, reisende = vbz_context
-    stations = stationsbetween(line, richtung, a, b, numstations, reisende)
+    stations = stationsbetween(line, direction, a, b, numstations, reisende)
     tag = get_tag(a_time)
     besetzungen = []
     for station in stations:
