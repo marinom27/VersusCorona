@@ -159,10 +159,12 @@ while(not finished):
                 #ratio_arr = 1# pred_dep[0]/capacities.get(32).get("overall")
                 #print(ratio_arr)
 
-
-
-
-                #ratio+=predict_marino(dep,dep_time,arr,arr_time,line,dir,vbz_cntext)
+                try:
+                    cap = capacities.get(int(line)).get("overall")
+                except:
+                    cap = 150
+                
+                #ratio+=predict_marino(dep,dep_time,arr,arr_time,line,dir,vbz_cntext)/cap
 
         if(count!=0):
             ratio/=count*2
