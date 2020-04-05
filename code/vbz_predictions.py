@@ -297,7 +297,7 @@ def get_vbz_context(bins_per_hour=4):
         reisende["Uhrzeit"], num_bins, labels=range(num_bins)
     )
     print("training model")
-    model = fit_model(reisende)
+    enc, model = fit_model(reisende)
     # print("building vbz network")
     # vbz_network = build_vbz_network(reisende_na)
 
