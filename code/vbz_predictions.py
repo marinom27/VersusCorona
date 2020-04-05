@@ -353,8 +353,8 @@ def get_tag(python_datetime):
 
 
 def get_time_bin(python_datetime, bins_per_hours=4):
-    hours = python_datetime.hours
-    minutes = python_datetime.minutes
+    hours = python_datetime.hour
+    minutes = python_datetime.minute
     return hours * 4 + (minutes % 15)
 
 
