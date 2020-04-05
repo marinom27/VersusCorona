@@ -370,16 +370,12 @@ def predict_marino(a, a_time, b, b_time, numstations, line, direction, vbz_conte
     stations = stationsbetween(line, direction, a, b, numstations, reisende)
     tag = get_tag(a_time)
     besetzungen = []
-    # X_pred = [[line, direction, sation, time_bin, tag]]
-    for station in stations:
-        time_bin = get_time_bin(a_time)
-
-        X_pred = [[line, direction, station, time_bin, tag]]
-        X_pred_hot = enc.transform(X_pred)
-
-        y_pred = model.predict(X_pred_hot)
-        besetzungen.append(y_pred)
-        print(y_pred)
-        # plot(line, station, direction, reisende, y_pred)
+    time_bin = get_time_bin(a_time)
+    X_pred = [[line, direction, station, time_bin, tag] for stations in stations]
+    X_pred_hot = enc.transform(X_pred)
+    y_pred = model.predict(X_pred_hot)
+    besetzungen.append(y_pred)
+    print(y_pred)
+    # plot(line, station, direction, reisende, y_pred)
 
     return max(besetzungen)
