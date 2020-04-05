@@ -8,7 +8,7 @@ from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import csv
 import numpy as np
-
+import time
 
 def dir_deptime(start,dest,dep_time):
 
@@ -130,6 +130,7 @@ while(not finished):
     print()
     print("Calculating ",len(routes), "possible routes...")
     print()
+    time.sleep(2)
     for r in range(0,len(routes)):
         ratio=0
         count=0
@@ -144,7 +145,7 @@ while(not finished):
 
                 dir = dirs.get(process.extractOne(towards,halteList)[0])
 
-                print(dep,dep_time,"Line: ",line, "towards: ",dir)
+                print(dep,dep_time,"Line: ",line, "towards: ",towards)
                 #pred_dep =predict_besetzung(dep_time, line, dep, dir)
 
 
@@ -163,7 +164,7 @@ while(not finished):
                     cap = capacities.get(int(line)).get("overall")
                 except:
                     cap = 150
-                
+
                 #ratio+=predict_marino(dep,dep_time,arr,arr_time,line,dir,vbz_cntext)/cap
 
         if(count!=0):
