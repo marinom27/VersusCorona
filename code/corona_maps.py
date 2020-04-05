@@ -8,7 +8,7 @@ from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import csv
 import numpy as np
-
+import time
 
 def dir_deptime(start,dest,dep_time):
 
@@ -25,7 +25,7 @@ def dir_arrtime(start,dest,arr_time):
     api = os.environ['GOOGLE_API_KEY']
     gmaps = googlemaps.Client(key=api)
     route = gmaps.directions(start,dest,mode="transit",arrival_time=arr_time,alternatives=True)
-    #pprint(route)
+    
     return route
 
 
@@ -93,7 +93,7 @@ for i in range(len(endstations)):
 
 
 
-#vbz_cntext = get_vbz_context()
+#vbz_context = get_vbz_context()
 
 
 #get context
@@ -122,7 +122,7 @@ while(not finished):
 
         route= dir_arrtime(start,destination,dt-timedelta(minutes=i))   #dir_arrtime for arrivaltime; dir_deptime for deptime
         for j in range(0,len(route)):
-            r=[parse_overral(route[j]),parse_steps(route[j]),0] #[overall route infos,steps infos,rating]
+            r=[parse_overral(route[j]),parse_steps(route[j]),0.0] #[overall route infos,steps infos,rating]
             #pprint(r)
             if r not in routes:
                 routes.append(r)
@@ -130,9 +130,10 @@ while(not finished):
     print()
     print("Calculating ",len(routes), "possible routes...")
     print()
+    time.sleep(2)
     for r in range(0,len(routes)):
-        ratio=0
-        count=0
+        ratio=0.0
+        count=0.0
         for j in range(len(routes[r][1])):
 
             if(routes[r][1][j].get("type")=="TRANSIT"):
@@ -144,7 +145,7 @@ while(not finished):
 
                 dir = dirs.get(process.extractOne(towards,halteList)[0])
 
-                print(dep,dep_time,"Line: ",line, "towards: ",dir)
+                print(dep,dep_time,"Line: ",line, "towards: ",towards)
                 #pred_dep =predict_besetzung(dep_time, line, dep, dir)
 
 
@@ -159,10 +160,12 @@ while(not finished):
                 #ratio_arr = 1# pred_dep[0]/capacities.get(32).get("overall")
                 #print(ratio_arr)
 
+                try:
+                    cap = capacities.get(int(line)).get("overall")
+                except:
+                    cap = 150
 
-
-
-                #ratio+=predict_marino(dep,dep_time,arr,arr_time,line,dir,vbz_cntext)
+                #ratio+=predict_marino(dep,dep_time,arr,arr_time,int(line),str(dir),vbz_cntext)/cap
 
         if(count!=0):
             ratio/=count*2
@@ -170,14 +173,14 @@ while(not finished):
             print("occupancy rate: ",ratio)
         print()
 
-    bestratio =1
+    bestratio =1.0
     bestroute=[]
     for r in range(len(routes)) :
         if(routes[r][2]<=bestratio):
             bestroute=routes[r][:]
             bestratio=routes[r][2]
     bestroute[0]["overall_duration"]=str(bestroute[0].get("overall_duration"))
-    
+
     for dict in bestroute[1]:
         if(dict.get("type")=="WALKING"):
             dict["dur"]=str(dict.get("dur"))
