@@ -2,9 +2,7 @@
 
 VersusCorona is a python-based application that shows the user the best possible transit in order to avoid large crowds and bypass regions with higher infection rates in order to decrease oneselves infection probability. 
 
-Different other metrics such as the ecologically best transit can also be chosen as criteria 
+the main prgramm is code/corona_map.py
+one needs to set an google API key which has maps directiins enabled as global variable GOOGLE_API_KEY for the program to work
 
-Example:
-  Route from Zürich, Zehntenhausplatz to ETH Zürich with arrival time window between 11:15 am and 9:155 am.
-  The data sets are from weekdays
- 
+A Team Project of: Agnese Sacchi, Yan Walesch, Frederik Semme, Jona Bühler and Marino Müller
