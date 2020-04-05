@@ -45,8 +45,9 @@ def parse_steps(route):
     for dict in route.get("legs")[0].get("steps"):
         if(dict.get("travel_mode")=="TRANSIT"):
 
-            if(dict.get("transit_details").get("line").get("vehicle").get("name")=="Commuter train"):
-                continue
+            if(dict.get("transit_details").get("line").get("vehicle").get("name")!="Tram" and dict.get("transit_details").get("line").get("vehicle").get("name")!="Bus"):
+
+                return[]
             dist = dict.get("distance").get("value")
             dur = timedelta(seconds=dict.get("duration").get("value"))
             dep = dict.get("transit_details").get("departure_stop").get("name")
@@ -100,19 +101,19 @@ hour =11
 minute = 15
 timebefore = 120 #time free before arrival time (in mins)
 dt = datetime.now().replace(hour=hour,minute=minute,day=6) #monday
-start = "Zehntenhausplatz,Zürich"
-destination = "ETH Zürich"
+start = "ETH Zürich"#"Zehntenhausplatz,Zürich"
+destination = "flughafen Zürich"#"ETH Zürich"
 now = datetime.now()
 
 routes = []
 
-for i in range (0,timebefore,30):
+for i in range (0,timebefore,60):
 
 
     route= dir_arrtime(start,destination,dt-timedelta(minutes=i))   #dir_arrtime for arrivaltime; dir_deptime for deptime
     for j in range(0,len(route)):
         r=[parse_overral(route[j]),parse_steps(route[j]),0] #[overall route infos,steps infos,rating]
-
+        pprint(r)
         if r not in routes:
             routes.append(r)
 #pprint(routes)
