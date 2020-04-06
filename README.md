@@ -6,3 +6,8 @@ the main prgramm is code/corona_map.py
 one needs to set an google API key which has maps directiins enabled as global variable GOOGLE_API_KEY for the program to work
 
 A Team Project of: Agnese Sacchi, Yan Walesch, Frederik Semme, Jona Bühler and Marino Müller
+
+## How to run
+
+### Python dependencies
+
