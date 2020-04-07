@@ -101,7 +101,7 @@ halteList = [
     line.rstrip("\n") for line in open("../data/vbz_fahrgastzahlen/stationen.txt")
 ]  # data bus and tram stations
 # print(halteList)
-capacities = {
+capacities = {                              #capacities ToDo: get all capacities
     32: {"seats": 60, "stands": 95, "overall": 155},
     61: {"seats": 43, "stands": 54, "overall": 97},
     62: {"seats": 43, "stands": 54, "overall": 97},
@@ -111,7 +111,7 @@ capacities = {
     11: {"seats": 90, "stands": 130, "overall": 220},
 }
 
-with open("../data/vbz_fahrgastzahlen/Haltestellen_Richtungen.csv", newline="") as f:
+with open("../data/vbz_fahrgastzahlen/Haltestellen_Richtungen.csv", newline="") as f:   #stationen
     reader = csv.reader(f)
     endstations = list(reader)
 endstations = endstations[1:][:]
@@ -124,7 +124,7 @@ for i in range(len(endstations)):
 vbz_context = get_vbz_context()
 
 
-# get context
+
 finished = False
 while not finished:
     start = input("From? ")
@@ -189,19 +189,18 @@ while not finished:
                 except:
                     cap = 150
 
-                ratio += (
-                    predict_marino(
-                        dep,
-                        dep_time,
-                        arr,
-                        arr_time,
-                        int(stops),
-                        str(line),
-                        int(direction),
-                        vbz_context,
-                    )
-                    / cap
-                )
+                prediction=predict_marino(      #freddis prediction
+                            dep,
+                            dep_time,
+                            arr,
+                            arr_time,
+                            int(stops),
+                            str(line),
+                            int(direction),
+                            vbz_context,
+                            )
+                ratio += prediction/cap
+
 
         if count != 0:
             ratio /= count * 2
@@ -211,13 +210,13 @@ while not finished:
 
     bestratio = 1.0
     bestroute = []
-    for r in range(len(routes)):
+    for r in range(len(routes)):                                #get best route
         if routes[r][2] <= bestratio and routes[r][2]>0.0 :
             bestroute = routes[r][:]
             bestratio = routes[r][2]
     bestroute[0]["overall_duration"] = str(bestroute[0].get("overall_duration"))
 
-    for dict in bestroute[1]:
+    for dict in bestroute[1]:       #for outputting datetime as string
         if dict.get("type") == "WALKING":
             dict["dur"] = str(dict.get("dur"))
         else:
@@ -233,5 +232,5 @@ while not finished:
     print()
 
     inp = input("do you want to start another request?y/n ")
-    if inp == "n":
+    if inp !="y":
         finished = True
