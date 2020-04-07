@@ -228,14 +228,23 @@ def clean_na(reisende_na):
     return reisende
 
 
-def preprocess(reisende):
-    X = reisende[["Linie", "Richtung", "Haltestelle", "Uhrzeit_Bin", "Tag"]]
-    y = reisende["Besetzung"].to_numpy().reshape(-1, 1)
+def preprocess_df(X_df, categories):
+    feature_names = ["Linie", "Richtung", "Haltestelle", "Uhrzeit_Bin", "Tag"]
 
-    enc = OneHotEncoder(handle_unknown="ignore").fit(X)
+    X = X_df[feature_names]
+    X["Ort"] = (
+        X["Linie"].astype(str)
+        + " "
+        + X["Richtung"].astype(str)
+        + " "
+        + X["Haltestelle"].astype(str)
+    ).astype("category")
+    categories = [X[name].cat.categories for name in X.columns]
+    y = reisende_sample["Besetzung"].to_numpy().reshape(-1, 1)
 
-    X_hot = enc.transform(X).toarray()
-    return X_hot, y
+    enc = OneHotEncoder(categories, handle_unknown="ignore").fit(X)
+    X = enc.transform(X).toarray()
+    return X, y
 
 
 def fit_regression_model(reisende):
@@ -246,7 +255,8 @@ def fit_regression_model(reisende):
 
 
 def fit_neural_network(reisende):
-    X, y = preprocess(reisende)
+    X, y = preprocess_df(reisende)
+    n, d = X.shape
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.20, random_state=42
     )
@@ -256,7 +266,7 @@ def fit_neural_network(reisende):
         Dense(
             units=400,
             activation="relu",
-            input_dim=892,
+            input_dim=d,
             kernel_regularizer=regularizers.l2(0.01),
         )
     )

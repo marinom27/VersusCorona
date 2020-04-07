@@ -1,4 +1,5 @@
 from datetime import datetime
+from pickle import dump, load
 
 import numpy as np
 import pandas as pd
@@ -9,7 +10,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from tensorflow.keras.models import load_model
 
-from vbz_training import fit_neural_network, fit_regression_model, preprocess
+from vbz_training import fit_neural_network, fit_regression_model, preprocess_df
 
 import warnings
 
@@ -309,13 +310,15 @@ def get_vbz_context(bins_per_hour=4):
     print("loading model")
     try:
         model = load_model("vbz_model.h5")
+        encoder = load(open("encoder.pkl", "rb"))
     except:
         print("Loading failed. Training model")
+        # TODO add encoder
         model = fit_neural_network(reisende)
     # print("building vbz network")
     # vbz_network = build_vbz_network(reisende_na)
 
-    return model, reisende  # , vbz_network
+    return encoder, model, reisende  # , vbz_network
 
 
 def get_tag(python_datetime):
@@ -339,13 +342,17 @@ def predict_marino(a, a_time, b, b_time, numstations, line, direction, vbz_conte
     dep: departure station
     dep_time:
     """
-    model, reisende = vbz_context
+    encoder, model, reisende = vbz_context
     stations = stationsbetween(line, direction, a, b, numstations, reisende)
     tag = get_tag(a_time)
+    orte = [f"{line} {direction} {station}" for station in stations]
     time_bin = get_time_bin(a_time)
-    X_pred = [[line, direction, station, time_bin, tag] for station in stations]
-    X_pred_hot = preprocess(X_pred)
-    y_pred = model.predict(X_pred_hot)
+    X_pred = [
+        [line, direction, station, time_bin, tag, ort]
+        for station, ort in zip(stations, orte)
+    ]
+    X_pred = encoder.transform(X_pred)
+    y_pred = model.predict(X_pred)
     # plot(line, station, direction, reisende, y_pred)
 
     return max(y_pred)
